@@ -1,0 +1,65 @@
+.inputContainer {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+
+    label {
+        position: absolute;
+        right: 15px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        img {
+            width: 15px;
+            height: 15px;
+        }
+    }
+
+ 
+    .textInput {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 40px;
+        border-radius: var(--border-radius);
+        cursor: pointer;
+        padding: 5px 15px;
+        gap: 5px;
+        background-color: #202020;
+        outline: 1px solid rgb(49, 49, 49);
+    
+        &::placeholder {
+            color: var(--placeholder-color);
+        }
+    
+        &:focus {
+            box-shadow: 0 0 10px 0 rgba(255, 255, 255, 0.1);
+        }
+        
+        &:hover {
+            box-shadow: 0 0 10px 0 rgba(255, 255, 255, 0.1);
+        }
+    
+        img {
+            width: 15px;
+            height: 15px;
+        }
+    
+        .headerNameIcon {
+            height: 100%;
+            width: auto;
+            aspect-ratio: 1/1;
+            background-color: grey;
+            display: flex;
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+            border-radius: var(--border-radius);
+        }
+    }
+}
