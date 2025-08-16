@@ -1,0 +1,80 @@
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    backdrop-filter: blur(2px);
+
+    .modalContent {
+        background-color: var(--primary-color);
+        border-radius: var(--border-radius);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        max-width: 600px;
+        width: 90%;
+        max-height: 90vh;
+        overflow: hidden;
+
+        .modalHeader {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 40px;
+            padding: 0 10px;
+            border-bottom: 1px solid var(--border-color-primary);
+            
+            background-color: var(--secondary-color);
+
+            .modalTitle {
+                font-size: var(--font-size-m);
+                margin: 0;
+            }
+            
+            .closeButton {
+                background: none;
+                border: none;
+                font-size: 24px;
+                cursor: pointer;
+                padding: 0;
+                width: 30px;
+                height: 30px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 4px;
+                transition: all 0.2s ease;
+            
+                &:hover {
+                    background-color: rgba(255, 255, 255, 0.1);
+                }
+            }
+        }
+
+        .modalBody {
+            min-height: 40px;
+            padding: 20px 10px;
+            background-color: var(--primary-color);
+            
+            .modalMessage {
+                line-height: 1.5;
+                margin: 0;
+            }
+        }
+    
+        .modalFooter {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            height: 40px;
+            padding: 0 20px;
+            justify-content: flex-end;
+            border-top: 1px solid var(--border-color-primary);
+            background-color: var(--primary-color);
+        }
+    }
+}

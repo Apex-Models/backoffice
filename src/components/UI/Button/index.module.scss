@@ -1,0 +1,43 @@
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 30px;
+    width: auto;
+    padding: 0 10px;
+    background-color: var(--primary-color);
+    color: var(--text-color-primary);
+    border: 1px solid var(--border-color-primary);
+    border-radius: var(--border-radius-small);
+    cursor: pointer;
+
+    &:hover {
+        background-color: var(--secondary-color);
+    }
+    
+    &.unavailable {
+        background-color: var(--secondary-color);
+        color: var(--placeholder-color);
+        cursor: default;
+    }
+
+    &.black {
+        background-color: var(--fifth-color);
+        color: var(--third-font-color);
+        
+        &:hover {
+            background-color: var(--sixth-color);
+        }
+    }
+    
+    &.grey {
+        background-color: var(--third-color);
+        color: var(--primary-font-color);
+        border: none;
+        
+        &:hover {
+            background-color: var(--fourth-color);
+        }
+    }
+}
