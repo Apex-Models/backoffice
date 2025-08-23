@@ -1,6 +1,9 @@
 .page {
     width: 100%;
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 
     .title {
         font-size: var(--font-size-m);
@@ -8,6 +11,7 @@
         display: flex;
         align-items: center;
         gap: 10px;
+        margin-bottom: 10px;
         
         img {
             width: 18px;
@@ -19,18 +23,19 @@
         width: 100%;
         display: flex;
         justify-content: space-around;
+        align-items: center;
         background-color: var(--primary-color);
         border: 1px solid var(--border-color-primary);
         border-radius: var(--border-radius);
         padding: 20px;
-        margin: 20px 0;
-
+        
         .item {
             display: flex;
             flex-direction: column;
             align-items: flex-start;
             justify-content: center;
             gap: 10px;
+            cursor: pointer;
 
             .label {
                 color: var(--placeholder-color);
@@ -41,6 +46,19 @@
                 font-weight: 600;
             }
         }
+
+        .statusFilter {
+            min-width: 180px;
+        }
+    }
+
+    .ordersActions {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 10px;
     }
 
     .ordersContainer {
@@ -54,15 +72,38 @@
 
         .ordersHeader {
             width: 100%;
+            height: 40px;
+            padding: 0 20px;
             display: grid;
-            grid-template-columns: 20px 80px repeat(6, 1fr);
+            grid-template-columns: 20px 65px 140px repeat(5, 1fr);
             gap: 20px;
             align-items: center;
-            padding: 10px 20px;
             background-color: var(--secondary-color);
             border-bottom: 1px solid var(--border-color-primary);
             font-size: var(--font-size-s);
             color: var(--text-color-secondary);
+
+            p {
+                display: flex;
+                align-items: center;
+                gap: 6px;
+                cursor: pointer;
+            }
+
+            .sortIcon {
+                width: 10px;
+                height: 10px;
+                display: inline-block;
+            }
+            .sortIconAsc {
+                transform: rotate(-90deg);
+            }
+            .sortIconDesc {
+                transform: rotate(90deg);
+            }
+            .sortIconHidden {
+                visibility: hidden;
+            }
         }
 
         .ordersList {
@@ -72,11 +113,12 @@
 
             .orderItem {
                 width: 100%;
+                height: 40px;
+                padding: 0px 20px;
                 display: grid;
-                grid-template-columns: 20px 80px repeat(6, 1fr);
+                grid-template-columns: 20px 65px 140px repeat(5, 1fr);
                 gap: 20px;
                 align-items: center;
-                padding: 10px 20px;
                 border-bottom: 1px solid var(--border-color-primary);
                 transition: background-color 0.2s ease;
 
@@ -95,9 +137,35 @@
         }
 
         .ordersFooter {
-            padding: 15px 20px;
+            padding: 0px 20px;
+            height: 40px;
             border-top: 1px solid var(--border-color-primary);
             background-color: var(--secondary-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .ordersFooterPages {
+                display: flex;
+                align-items: center;
+                gap: 5px;
+
+                div {
+                    box-sizing: border-box;
+                    padding: 5px 7px;
+                    border: 1px solid var(--border-color-primary);
+                    border-radius: 7px;
+                    display: flex;
+                    background-color: var(--primary-color);
+                    cursor: pointer;
+
+                    &.unavailable {
+                        background-color: var(--secondary-color);
+                        color: var(--placeholder-color);
+                        cursor: default;
+                    }
+                }
+            }
         }
     }
 }

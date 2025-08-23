@@ -23,6 +23,7 @@
         width: 100%;
         display: flex;
         justify-content: space-around;
+        align-items: center;
         background-color: var(--primary-color);
         border: 1px solid var(--border-color-primary);
         border-radius: var(--border-radius);
@@ -44,6 +45,10 @@
                 font-size: var(--font-size-m);
                 font-weight: 600;
             }
+        }
+
+        .statusFilter {
+            min-width: 180px;
         }
     }
 

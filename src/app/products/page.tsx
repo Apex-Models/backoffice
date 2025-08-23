@@ -1,7 +1,6 @@
 "use client"
 
 import { useEffect, useState } from "react";
-import Input from "@/components/UI/Input";
 import Button from "@/components/UI/Button";
 import CheckBox from "@/components/UI/CheckBox";
 import Modal from "@/components/UI/Modal";
@@ -76,8 +75,6 @@ export default function Index() {
     }
   }, [data]);
 
-
-
   const handleProductSelection = (productId: number) => {
     setSelectedProducts(prev => 
       prev.includes(productId) 
@@ -113,13 +110,10 @@ export default function Index() {
         },
         body: JSON.stringify({ productIds: selectedProducts.map(id => id.toString()) })
       });
-
       const result = await response.json();
 
       if (result.success) {
-        // Réinitialiser la sélection après suppression
         setSelectedProducts([]);
-        // Recharger la liste des produits
         fetchData();
       } else {
         alert(`Erreur: ${result.message}`);

@@ -1,36 +1,65 @@
-.checkboxContainer {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 18px;
-    height: 18px;
-    border-radius: 4px;
-    background-color: transparent;
-    border: 1px solid #d1d5db;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    position: relative;
-    background-color: var(--primary-color);
-
-    &.active {
-        background-color: var(--sixth-color);
-        border-color: var(--sixth-color);
-    }
-
-    .checkmark {
-        color: white;
-        font-size: 12px;
-        font-weight: bold;
-        line-height: 1;
-    }
-}
-
 .inputContainer {
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
     width: 100%;
+    
+    .textInput {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 30px;
+        border-radius: var(--border-radius-small);
+        cursor: pointer;
+        padding: 5px 10px;
+        gap: 5px;
+        background-color: var(--primary-color);
+        outline: 1px solid var(--border-color-primary);
+
+        &::placeholder {
+            color: var(--placeholder-color);
+        }
+
+        &:focus {
+            outline-color: var(--border-color-secondary);
+        }
+        
+        img {
+            width: 15px;
+            height: 15px;
+        }
+        
+        .headerNameIcon {
+            height: 100%;
+            width: auto;
+            aspect-ratio: 1/1;
+            background-color: grey;
+            display: flex;
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+            border-radius: var(--border-radius);
+        }
+        
+        &.header {
+            height: 40px;
+            background-color: #202020;
+            outline: 1px solid rgb(49, 49, 49);
+            border-radius: var(--border-radius);
+            padding: 5px 15px;
+            
+            &:focus {
+                box-shadow: 0 0 10px 0 rgba(255, 255, 255, 0.1);
+            }
+            
+            &:hover {
+                box-shadow: 0 0 10px 0 rgba(255, 255, 255, 0.1);
+            }
+        }
+    }
+
 
     label {
         position: absolute;
@@ -43,50 +72,6 @@
         img {
             width: 15px;
             height: 15px;
-        }
-    }
-
- 
-    .textInput {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-        height: 40px;
-        border-radius: var(--border-radius);
-        cursor: pointer;
-        padding: 5px 15px;
-        gap: 5px;
-        background-color: #202020;
-        outline: 1px solid rgb(49, 49, 49);
-    
-        &::placeholder {
-            color: var(--placeholder-color);
-        }
-    
-        &:focus {
-            box-shadow: 0 0 10px 0 rgba(255, 255, 255, 0.1);
-        }
-        
-        &:hover {
-            box-shadow: 0 0 10px 0 rgba(255, 255, 255, 0.1);
-        }
-    
-        img {
-            width: 15px;
-            height: 15px;
-        }
-    
-        .headerNameIcon {
-            height: 100%;
-            width: auto;
-            aspect-ratio: 1/1;
-            background-color: grey;
-            display: flex;
-            text-align: center;
-            align-items: center;
-            justify-content: center;
-            border-radius: var(--border-radius);
         }
     }
 }
