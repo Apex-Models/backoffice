@@ -156,7 +156,7 @@ export default function Index() {
           <p className={styles.value}>{customersCounts.totalUsersWithOrders}</p>
         </div>
         <div className={styles.item} onClick={() => setFetchParams(prev => ({ ...prev, filter: { ...prev.filter, hasOrders: false }, status: 'without_orders' }))}>
-          <p className={styles.label}>N'ont pas commandé</p>
+          <p className={styles.label}>N&apos;ont pas commandé</p>
           <p className={styles.value}>{customersCounts.totalUsersWithoutOrders}</p>
         </div>
         <div className={styles.item}>

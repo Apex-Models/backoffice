@@ -1,11 +1,11 @@
 export interface FetchParams {
     url: string;
     method: string;
-    body?: any;
+    body?: unknown;
     token?: string;
 }
   
-export interface ApiResponse<T = any> {
+export interface ApiResponse<T = unknown> {
     code: number;
     message?: string;
     data?: T;
@@ -32,7 +32,7 @@ export interface Product {
     description: string;
     price: number;
     imageUrl?: string;
-    ObjectModelData?: any;
+    ObjectModelData?: unknown;
     type: string;
     category: string[];
     status: 'active' | 'inactive';
@@ -48,7 +48,7 @@ export interface GetProductsResponse {
     totalMatchedProducts: number;
     counts: ProductCounts;
     appliedFilters: {
-        filter: any;
+        filter: Record<string, unknown>;
         sort: {
             sortBy: string;
             sortOrder: string;
@@ -111,7 +111,7 @@ export interface GetOrdersResponse {
     totalMatchedOrders: number;
     counts: OrderCounts;
     appliedFilters: {
-        filter: any;
+        filter: Record<string, unknown>;
         sort: {
             sortBy: string;
             sortOrder: string;
@@ -186,7 +186,7 @@ export interface GetUsersResponse {
     totalMatchedUsers: number;
     counts: UserCounts;
     appliedFilters: {
-        filter: any;
+        filter: Record<string, unknown>;
         sort: {
             sortBy: string;
             sortOrder: string;

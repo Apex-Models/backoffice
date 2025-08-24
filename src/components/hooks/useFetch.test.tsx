@@ -13,8 +13,7 @@ describe('useFetch', () => {
 
   it('retourne data au succès', async () => {
     const mockJson = jest.fn().mockResolvedValue({ code: 200, data: { ok: true } });
-    // @ts-ignore
-    global.fetch = jest.fn().mockResolvedValue({ json: mockJson });
+    global.fetch = jest.fn().mockResolvedValue({ json: mockJson }) as unknown as typeof fetch;
 
     const { result } = renderHook(() => useFetch({ url: 'test', method: 'GET' }));
 
@@ -29,8 +28,7 @@ describe('useFetch', () => {
 
   it('retourne error si code != 200', async () => {
     const mockJson = jest.fn().mockResolvedValue({ code: 500, message: 'err' });
-    // @ts-ignore
-    global.fetch = jest.fn().mockResolvedValue({ json: mockJson });
+    global.fetch = jest.fn().mockResolvedValue({ json: mockJson }) as unknown as typeof fetch;
 
     const { result } = renderHook(() => useFetch({ url: 'test', method: 'GET' }));
 

@@ -17,13 +17,9 @@ const useFetch = ({ url, method, body, token }: FetchParams) => {
           credentials: 'include',
           headers: {
               "Content-Type": "application/json",
-              ...token && {
-                "authorization":token
-              }
+              ...(token ? { authorization: token } : {})
           },
-          ...body && {
-              body:JSON.stringify(body)
-          }
+          ...(body !== undefined ? { body: JSON.stringify(body) } : {})
       });
       const dataJson = await response.json();
       if(dataJson.code && dataJson.code !== 200) {
